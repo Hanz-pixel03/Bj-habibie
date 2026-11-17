@@ -1,0 +1,669 @@
+```html
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio & Dedikasi | Prof. Dr. Ing. H. B.J. Habibie</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Konfigurasi Tailwind untuk Font dan Warna -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- Navbar / Navigasi Atas -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Nama Tokoh -->
+                <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2.5">
+                    <span class="w-9 h-9 rounded-xl bg-primary-600 text-white flex items-center justify-center font-bold text-base shadow-sm">BJH</span>
+                    <span>B.J. <span class="text-primary-600">Habibie</span></span>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#tentang" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Tentang</a>
+                    <a href="#project" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Project</a>
+                    <a href="#education-skills" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Education & Skills</a>
+                    <a href="#work-process" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Work Process</a>
+                    <a href="#penutup" class="text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors">Penutup</a>
+                    
+                    <!-- Tombol Dark Mode -->
+                    <button id="theme-toggle" aria-label="Ubah Tema" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                </nav>
+
+                <!-- Tombol Menu Mobile -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button id="theme-toggle-mobile" aria-label="Ubah Tema" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                        <svg id="sun-icon-mobile" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg id="moon-icon-mobile" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-1">
+            <a href="#tentang" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Tentang</a>
+            <a href="#project" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Project</a>
+            <a href="#education-skills" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Education & Skills</a>
+            <a href="#work-process" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Work Process</a>
+            <a href="#penutup" class="mobile-link block px-3 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Penutup</a>
+        </div>
+    </header>
+
+    <!-- 1. TENTANG B.J. HABIBIE (Hero & Biografi) -->
+    <section id="tentang" class="pt-32 pb-20 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+            <!-- Teks Perkenalan -->
+            <div class="w-full md:w-3/5 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold mb-6 border border-primary-100 dark:border-primary-800">
+                    01. Tentang B.J. Habibie &bull; Presiden RI ke-3
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight mb-6">
+                    Prof. Dr. Ing. H. <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-sky-500">B.J. Habibie</span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                    Lahir di Parepare, 25 Juni 1936, Bacharuddin Jusuf Habibie adalah ilmuwan dirgantara dunia, penemu <em>Teori Keretakan Pesawat</em>, perancang pesawat terbang nasional N250 Gatotkaca, sekaligus negarawan yang meletakkan fondasi demokrasi dan kemandirian teknologi Indonesia.
+                </p>
+                <blockquote class="border-l-4 border-primary-600 pl-4 italic text-slate-700 dark:text-slate-300 text-sm sm:text-base mb-8 max-w-xl mx-auto md:mx-0">
+                    "Jadilah mata air yang jernih, yang memberikan kehidupan kepada sekitarmu."
+                </blockquote>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="#project" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-semibold shadow-lg shadow-primary-600/25 transition-all text-center">
+                        Lihat Project & Karya
+                    </a>
+                    <a href="#education-skills" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-white font-semibold border border-slate-200 dark:border-slate-700 transition-all text-center">
+                        Education & Skills
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Potret Tokoh -->
+            <div class="w-full md:w-2/5 flex justify-center">
+                <div class="relative w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-96 group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-600 to-sky-400 rounded-3xl rotate-6 opacity-25 dark:opacity-40 group-hover:rotate-3 transition-transform duration-300"></div>
+                    <img 
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/B._J._Habibie,_President_of_Indonesia_portrait.jpg?width=600" 
+                        onerror="this.onerror=null; this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Bacharuddin_Jusuf_Habibie_official_portrait.jpg?width=600';"
+                        alt="Potret Resmi Prof. Dr. Ing. H. B.J. Habibie" 
+                        class="relative w-full h-full object-cover object-top rounded-3xl shadow-xl border-4 border-white dark:border-slate-800 bg-slate-200 dark:bg-slate-800"
+                    >
+                    <div class="absolute bottom-3 left-3 right-3 px-3 py-2 rounded-xl bg-slate-900/75 backdrop-blur-md text-white text-xs text-center border border-white/10">
+                        Bapak Teknologi & Presiden RI ke-3
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Galeri Dokumentasi Singkat & Pilar Pengabdian -->
+        <div class="mt-20 pt-16 border-t border-slate-200/80 dark:border-slate-800">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Ilmuwan Dirgantara</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Menjabat Wakil Presiden Direktur di Messerschmitt-Bölkow-Blohm (MBB) Hamburg, Jerman, dan menghasilkan 46 paten aeronautika internasional.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Arsitek Industri Strategis</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Memimpin IPTN (PT Dirgantara Indonesia), BPPT, dan Menristek selama 20 tahun demi kemandirian teknologi bangsa.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Presiden RI ke-3</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Memimpin Indonesia di masa transisi reformasi 1998–1999, memulihkan ekonomi, membebaskan pers, serta mengesahkan Otonomi Daerah.</p>
+                </div>
+            </div>
+
+            <!-- Galeri Foto Bersejarah (Klik untuk memperbesar) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div onclick="openPhotoModal(this)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all">
+                    <div class="aspect-[3/4] overflow-hidden bg-slate-200 dark:bg-slate-700">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Young_Habibie_Portrait.jpg?width=600" onerror="this.src='https://placehold.co/450x600/1e3a8a/ffffff?text=Masa+Muda+Habibie'" alt="Masa Muda B.J. Habibie" data-caption="Masa Muda & Pelajar — Semangat menuntut ilmu teknik konstruksi pesawat terbang di Jerman." class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3.5">
+                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Masa Muda</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Pelajar & Ilmuwan Muda</p>
+                    </div>
+                </div>
+
+                <div onclick="openPhotoModal(this)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all">
+                    <div class="aspect-[3/4] overflow-hidden bg-slate-200 dark:bg-slate-700">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bacharuddin_Jusuf_Habibie_official_portrait.jpg?width=600" onerror="this.src='https://placehold.co/450x600/1e3a8a/ffffff?text=Wakil+Presiden+RI+ke-7'" alt="Wakil Presiden RI ke-7" data-caption="Wakil Presiden RI ke-7 (1998) — Mengemban amanah kenegaraan setelah dua dekade memimpin riset nasional." class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3.5">
+                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Wakil Presiden RI ke-7</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Potret Resmi 1998</p>
+                    </div>
+                </div>
+
+                <div onclick="openPhotoModal(this)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all">
+                    <div class="aspect-[3/4] overflow-hidden bg-slate-200 dark:bg-slate-700">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/B.J._Habibie_with_presidential_decorations.jpg?width=600" onerror="this.src='https://placehold.co/450x600/1e3a8a/ffffff?text=Presiden+RI+ke-3'" alt="Presiden RI ke-3" data-caption="Presiden Republik Indonesia ke-3 — Mengenakan pakaian sipil lengkap dengan tanda jasa kehormatan negara." class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3.5">
+                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Presiden RI ke-3</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Dengan Tanda Jasa</p>
+                    </div>
+                </div>
+
+                <div onclick="openPhotoModal(this)" class="group cursor-pointer rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all">
+                    <div class="aspect-[3/4] overflow-hidden bg-slate-200 dark:bg-slate-700">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/B._J._Habibie_(2015).jpg?width=600" onerror="this.src='https://placehold.co/450x600/1e3a8a/ffffff?text=Eyang+Habibie+2015'" alt="B.J. Habibie 2015" data-caption="Guru Bangsa (2015) — Terus membimbing generasi muda Indonesia agar menguasai IPTEK berlandaskan iman dan takwa." class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-3.5">
+                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Guru Bangsa (2015)</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Inspirasi Generasi Muda</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PROJECT (Karya Monumental & Paten) -->
+    <section id="project" class="py-20 bg-white dark:bg-slate-800/50 border-y border-slate-200/60 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400">02. Project & Karya</span>
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-2">Mahakarya Dirgantara & Bangsa</h2>
+                    <p class="text-slate-600 dark:text-slate-300">Inovasi teknologi penerbangan dunia dan terobosan kebijakan strategis nasional.</p>
+                </div>
+
+                <!-- Filter Kategori Karya -->
+                <div class="flex flex-wrap gap-2" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-primary-600 text-white transition-all">Semua</button>
+                    <button data-filter="dirgantara" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Dirgantara & Paten</button>
+                    <button data-filter="kenegaraan" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Kenegaraan</button>
+                </div>
+            </div>
+
+            <!-- Grid Kartu Karya -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1 -->
+                <article class="project-card group rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="dirgantara">
+                    <div class="relative overflow-hidden aspect-video bg-slate-200 dark:bg-slate-700">
+                        <img 
+                            src="https://images.unsplash.com/photo-1559067515-bf7d799b6d4d?auto=format&fit=crop&w=800&q=80" 
+                            onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Pesawat+N250+Gatotkaca'"
+                            alt="Pesawat N250 Gatotkaca" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 text-xs font-semibold">Dirgantara</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-200/70 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-medium">1995</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Pesawat N250 Gatotkaca</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 flex-1">Pesawat penumpang komuter pertama buatan Indonesia dengan teknologi mutakhir <em>Fly-By-Wire</em> yang sukses terbang perdana pada 10 Agustus 1995.</p>
+                        <button onclick="openProjectModal('Pesawat N250 Gatotkaca', 'Dirancang langsung oleh B.J. Habibie bersama tim insinyur IPTN Bandung. N250 menjadi pesawat turboprop pertama di dunia yang mengadopsi sistem kendali terbang penuh Fly-By-Wire, menjadikannya tonggak sejarah kebangkitan teknologi Indonesia (Hakteknas).', 'Teknologi Fly-By-Wire, Turboprop Regional 50 Penumpang, IPTN')" class="w-full py-2.5 px-4 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-sm font-semibold text-slate-800 dark:text-white hover:bg-primary-600 hover:text-white hover:border-primary-600 dark:hover:bg-primary-600 transition-colors">
+                            Detail Project
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card group rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="dirgantara">
+                    <div class="relative overflow-hidden aspect-video bg-slate-200 dark:bg-slate-700">
+                        <img 
+                            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" 
+                            onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Habibie+Factor+%26+Theorem'"
+                            alt="Rumus Crack Progression" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 text-xs font-semibold">Paten Dunia</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-200/70 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-medium">Mr. Crack</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Teori Keretakan Pesawat</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 flex-1">Penemuan rumus perhitungan perambatan retak (<em>Crack Progression</em>) hingga tingkat atom yang meningkatkan standar keselamatan penerbangan global.</p>
+                        <button onclick="openProjectModal('Habibie Factor & Crack Progression Theory', 'Metode penghitungan titik retakan pada konstruksi badan dan sayap pesawat akibat kelelahan material (fatigue). Penemuan ini memangkas bobot pesawat hingga 10-25% sekaligus mencegah kecelakaan fatal akibat kelelahan struktur logam.', 'Fracture Mechanics, Struktur Badan Pesawat, 46 Paten Internasional')" class="w-full py-2.5 px-4 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-sm font-semibold text-slate-800 dark:text-white hover:bg-primary-600 hover:text-white hover:border-primary-600 dark:hover:bg-primary-600 transition-colors">
+                            Detail Project
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card group rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="kenegaraan">
+                    <div class="relative overflow-hidden aspect-video bg-slate-200 dark:bg-slate-700">
+                        <img 
+                            src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?auto=format&fit=crop&w=800&q=80" 
+                            onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Reformasi+%26+Demokrasi'"
+                            alt="Fondasi Reformasi dan Demokrasi" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">Kenegaraan</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-200/70 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-medium">1998–1999</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Reformasi & Pemulihan Ekonomi</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-6 flex-1">Meletakkan pilar demokrasi modern Indonesia, independensi Bank Indonesia, kebebasan pers, serta menguatkan kembali nilai tukar rupiah pascakrisis.</p>
+                        <button onclick="openProjectModal('Fondasi Demokrasi & Pemulihan Ekonomi 1998', 'Dalam masa jabatan 517 hari sebagai Presiden RI ke-3, B.J. Habibie berhasil menurunkan kurs dolar dari Rp16.000 ke kisaran Rp6.500, menyelenggarakan Pemilu demokratis 1999, mengesahkan UU Kebebasan Pers, dan merintis Otonomi Daerah.', 'UU Pers No. 40/1999, Independensi Bank Sentral, Otonomi Daerah')" class="w-full py-2.5 px-4 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-sm font-semibold text-slate-800 dark:text-white hover:bg-primary-600 hover:text-white hover:border-primary-600 dark:hover:bg-primary-600 transition-colors">
+                            Detail Project
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. EDUCATION & SKILLS (Riwayat Pendidikan & Kepakaran) -->
+    <section id="education-skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400">03. Education & Skills</span>
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-4">Riwayat Pendidikan & Kepakaran</h2>
+            <p class="text-slate-600 dark:text-slate-300">Perjalanan akademik gemilang dari Bandung hingga Jerman serta keahlian teknik tingkat dunia.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <!-- Kolom Kiri: Timeline Education -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                    Riwayat Pendidikan (Education)
+                </h3>
+
+                <div class="relative pl-6 border-l-2 border-primary-600 space-y-6">
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <span class="text-xs font-semibold text-primary-600 dark:text-primary-400">1960 – 1965</span>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">Doktor Ingenieur (Dr.-Ing.) — RWTH Aachen, Jerman</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Konstruksi Pesawat Terbang (<em>Flugzeugbau</em>) — Lulus dengan predikat tertinggi <strong>Summa Cum Laude</strong> (nilai rata-rata 10).</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <span class="text-xs font-semibold text-primary-600 dark:text-primary-400">1955 – 1960</span>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">Diplom-Ingenieur (Dipl.-Ing.) — RWTH Aachen, Jerman</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Spesialisasi Teknik Penerbangan dan Konstruksi Ringan dengan predikat <em>Cum Laude</em>.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <span class="text-xs font-semibold text-primary-600 dark:text-primary-400">1954</span>
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">Institut Teknologi Bandung (ITB)</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Menempuh studi Teknik Mesin sebelum melanjutkan pendidikan tinggi teknik dirgantara di Jerman.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Skills & Kepakaran -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    Kompetensi & Kepakaran (Skills)
+                </h3>
+
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1.5">
+                            <span>Konstruksi & Struktur Pesawat Terbang</span>
+                            <span class="text-primary-600">Pakar Dunia</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary-600 rounded-full" style="width: 98%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1.5">
+                            <span>Termodinamika & Mekanika Retakan (Fracture Mechanics)</span>
+                            <span class="text-primary-600">Penemu Rumus</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary-600 rounded-full" style="width: 97%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1.5">
+                            <span>Sistem Avionik & Fly-By-Wire</span>
+                            <span class="text-primary-600">Inovator</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-sky-500 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold mb-1.5">
+                            <span>Manajemen Industri Strategis & Kebijakan Publik</span>
+                            <span class="text-primary-600">Negarawan</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500 rounded-full" style="width: 94%"></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-100 dark:border-slate-700 flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-xs font-medium">Aerodinamika</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-xs font-medium">46 Paten Aeronautika</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-xs font-medium">R&D Industri</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-xs font-medium">Multibahasa (ID, DE, EN, NL)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WORK PROCESS (Filosofi & Tahapan Kerja B.J. Habibie) -->
+    <section id="work-process" class="py-20 bg-white dark:bg-slate-800/50 border-y border-slate-200/60 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400">04. Work Process</span>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-4">Metodologi & Etos Kerja Habibie</h2>
+                <p class="text-slate-600 dark:text-slate-300">Strategi transformasi teknologi bangsa yang terkenal dengan konsep <em>"Berawal di Akhir, Berakhir di Awal"</em>.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tahap 1 -->
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 relative">
+                    <span class="w-10 h-10 rounded-xl bg-primary-600 text-white font-bold flex items-center justify-center mb-4 shadow-md">01</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Lisensi & Alih Teknologi</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Memulai produksi dengan lisensi mitra global (seperti CASA Spanyol & MBB Jerman) untuk menguasai standar manufaktur dunia.</p>
+                </div>
+
+                <!-- Tahap 2 -->
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 relative">
+                    <span class="w-10 h-10 rounded-xl bg-primary-600 text-white font-bold flex items-center justify-center mb-4 shadow-md">02</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Integrasi Teknologi</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Mengintegrasikan komponen yang sudah ada ke dalam rancangan baru yang disesuaikan kebutuhan geografis nusantara.</p>
+                </div>
+
+                <!-- Tahap 3 -->
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 relative">
+                    <span class="w-10 h-10 rounded-xl bg-primary-600 text-white font-bold flex items-center justify-center mb-4 shadow-md">03</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Pengembangan Teknologi</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Menciptakan desain orisinal secara mandiri dari nol seperti lahirnya pesawat komuter N250 Gatotkaca.</p>
+                </div>
+
+                <!-- Tahap 4 -->
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 relative">
+                    <span class="w-10 h-10 rounded-xl bg-primary-600 text-white font-bold flex items-center justify-center mb-4 shadow-md">04</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Riset Dasar & IMTAK</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Memperkuat riset ilmu dasar secara berkelanjutan dengan menyelaraskan penguasaan IPTEK serta Iman dan Takwa (IMTAK).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PENUTUP (Warisan Pemikiran, Buku Tamu & Footer) -->
+    <section id="penutup" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400">05. Penutup</span>
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-3">Warisan Abadi & Buku Tamu</h2>
+            <p class="text-slate-600 dark:text-slate-300">Semangat pengabdian Prof. Dr. Ing. H. B.J. Habibie tetap menyala dalam setiap langkah generasi penerus bangsa Indonesia.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8 sm:p-10 shadow-sm">
+            <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Nama Pengunjung</label>
+                        <input type="text" id="name" required placeholder="Contoh: Andi Wijaya" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-600">
+                    </div>
+                    <div>
+                        <label for="origin" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Asal Kota / Instansi</label>
+                        <input type="text" id="origin" required placeholder="Contoh: Bandung / Mahasiswa" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-600">
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Pesan atau Kutipan Favorit</label>
+                    <textarea id="message" rows="4" required placeholder="Tuliskan pesan apresiasi atau kutipan inspiratif B.J. Habibie..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-600"></textarea>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <button type="button" onclick="copyQuote()" class="text-sm text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 flex items-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        Salin Kutipan Eyang Habibie
+                    </button>
+                    <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-semibold shadow-lg shadow-primary-600/25 transition-all">
+                        Kirim Pesan
+                    </button>
+                </div>
+            </form>
+
+            <!-- Daftar Pesan Pengunjung -->
+            <div id="guestbook-list" class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-700 space-y-4">
+                <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700/70">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="font-semibold text-sm text-slate-900 dark:text-white">Nadia Putri</span>
+                        <span class="text-xs text-slate-400">Mahasiswa Teknik Dirgantara</span>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">"Dedikasi Eyang Habibie membuktikan bahwa anak bangsa mampu menguasai teknologi tingkat dunia tanpa meninggalkan nilai iman dan takwa."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Penutup -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-10 px-4 text-center">
+        <div class="max-w-3xl mx-auto space-y-3">
+            <p class="text-base font-semibold text-slate-800 dark:text-slate-200">"Keberhasilan bukanlah milik orang yang pintar, melainkan milik mereka yang senantiasa berusaha."</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Mengenang Jasa & Karya Prof. Dr. Ing. H. Bacharuddin Jusuf Habibie (1936 – 2019)</p>
+        </div>
+    </footer>
+
+    <!-- Modal Detail Karya -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-700 transform transition-all">
+            <div class="flex justify-between items-start mb-4">
+                <h3 id="modal-title" class="text-2xl font-bold text-slate-900 dark:text-white">Judul Karya</h3>
+                <button onclick="closeProjectModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <p id="modal-desc" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5">Deskripsi karya...</p>
+            <div class="mb-6">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-1">Aspek Teknis & Dampak</span>
+                <p id="modal-tech" class="text-sm font-medium text-primary-600 dark:text-primary-400">Detail teknis</p>
+            </div>
+            <div class="flex justify-end">
+                <button onclick="closeProjectModal()" class="px-6 py-2.5 rounded-xl bg-slate-900 dark:bg-primary-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Lightbox Foto -->
+    <div id="photo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-md p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700">
+            <div class="relative bg-slate-900">
+                <img id="lightbox-img" src="" alt="Pratinjau Foto B.J. Habibie" class="w-full max-h-[65vh] object-contain mx-auto">
+                <button onclick="closePhotoModal()" aria-label="Tutup Foto" class="absolute top-3 right-3 p-2 rounded-full bg-slate-900/70 text-white hover:bg-slate-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-5">
+                <p id="lightbox-caption" class="text-sm text-slate-700 dark:text-slate-200 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifikasi Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-3.5 rounded-2xl shadow-xl text-sm font-medium flex items-center gap-2.5">
+        <svg class="w-5 h-5 text-emerald-400 dark:text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toast-message">Pesan berhasil dikirim!</span>
+    </div>
+
+    <!-- Logika JavaScript Interaktif -->
+    <script>
+        // 1. Pengaturan Tema Gelap / Terang
+        const htmlEl = document.documentElement;
+        const themeToggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+        const sunIcons = [document.getElementById('sun-icon'), document.getElementById('sun-icon-mobile')];
+        const moonIcons = [document.getElementById('moon-icon'), document.getElementById('moon-icon-mobile')];
+
+        function updateThemeIcons(isDark) {
+            sunIcons.forEach(icon => icon.classList.toggle('hidden', !isDark));
+            moonIcons.forEach(icon => icon.classList.toggle('hidden', isDark));
+        }
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlEl.classList.add('dark');
+            updateThemeIcons(true);
+        }
+
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isDark = htmlEl.classList.toggle('dark');
+                updateThemeIcons(isDark);
+            });
+        });
+
+        // 2. Navigasi Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 3. Filter Kategori Karya
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary-600', 'text-white');
+                    b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                });
+                btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                btn.classList.add('bg-primary-600', 'text-white');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // 4. Modal Detail Karya
+        const modal = document.getElementById('project-modal');
+        function openProjectModal(title, desc, tech) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-desc').textContent = desc;
+            document.getElementById('modal-tech').textContent = tech;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeProjectModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeProjectModal();
+        });
+
+        // 4b. Modal Lightbox Galeri Foto
+        const photoModal = document.getElementById('photo-modal');
+        function openPhotoModal(cardEl) {
+            const imgEl = cardEl.querySelector('img');
+            document.getElementById('lightbox-img').src = imgEl.src;
+            document.getElementById('lightbox-caption').textContent = imgEl.getAttribute('data-caption') || imgEl.alt;
+            photoModal.classList.remove('hidden');
+            photoModal.classList.add('flex');
+        }
+
+        function closePhotoModal() {
+            photoModal.classList.add('hidden');
+            photoModal.classList.remove('flex');
+        }
+
+        photoModal.addEventListener('click', (e) => {
+            if (e.target === photoModal) closePhotoModal();
+        });
+
+        // 5. Notifikasi Toast & Buku Tamu Interaktif
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const origin = document.getElementById('origin').value;
+            const message = document.getElementById('message').value;
+
+            const list = document.getElementById('guestbook-list');
+            const entry = document.createElement('div');
+            entry.className = 'p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700/70';
+            entry.innerHTML = `
+                <div class="flex justify-between items-center mb-1">
+                    <span class="font-semibold text-sm text-slate-900 dark:text-white">${name}</span>
+                    <span class="text-xs text-slate-400">${origin}</span>
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-300">"${message}"</p>
+            `;
+            list.prepend(entry);
+
+            showToast('Terima kasih! Pesan Anda telah ditambahkan ke Buku Tamu.');
+            e.target.reset();
+        });
+
+        // 6. Salin Kutipan ke Clipboard
+        function copyQuote() {
+            const quoteText = '"Jadilah mata air yang jernih, yang memberikan kehidupan kepada sekitarmu." — B.J. Habibie';
+            const tempInput = document.createElement('input');
+            tempInput.value = quoteText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Kutipan B.J. Habibie berhasil disalin!');
+        }
+    </script>
+</body>
+</html>
+```
